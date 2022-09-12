@@ -20,26 +20,26 @@
 <main>
   <form action="" id="survey-form">
     <label for="name" id="name-label">
-      Name
+      Name *
       <input id="name" name="name" placeholder="Your name" required type="text">
     </label>
 
     <label for="email" id="email-label">
-      Email
+      Email *
       <input id="email" name="email" placeholder="Enter your email" required type="email">
     </label>
 
     <label for="number" id="number-label">
-      Notation
+      Age
       <input id="number" max="10" min="1"
-             name="notation" placeholder="from 1 (very bad) to 2 (very good) " required
+             name="age" placeholder="Age"
              type="number">
     </label>
 
     <label for="dropdown">
-      How did you know us ?
+      How did you know us ? *
       <select id="dropdown" name="dropdown">
-        <option value="">How did you know us ?</option>
+        <option value="">--</option>
         <option value="TV">TV</option>
         <option value="RS">Social Networks</option>
         <option value="magazine">Magazine</option>
@@ -48,45 +48,67 @@
 
     </label>
 
-    <div class="form-group">
-      <p>Would you recommend us to a friend?</p>
+    <div class="form-group radio">
+      <p>Would you recommend us to a friend ? *</p>
+
       <label for="choice1">
         <input id="choice1" name="name" type="radio" value="choice1">
+        <span aria-hidden="true" class="custom-input radio"></span>
         Not at all
       </label>
+
       <label for="choice2">
         <input id="choice2" name="name" type="radio" value="choice2">
+        <span aria-hidden="true" class="custom-input radio"></span>
         A little
       </label>
-      <label for="choice3">
-        <input id="choice3" name="name" type="radio" value="choice3">
-        Absolutely
-      </label>
+
+      <div>
+        <label for="choice3">
+          <input id="choice3" name="name" type="radio" value="choice3">
+          <span aria-hidden="true" class="custom-input radio"></span>
+          Absolutely
+        </label>
+      </div>
     </div>
 
     <div class="form-group">
       <p>How do you use our service? <span>(Multiple choices)</span></p>
       <label for="studies">
         <input id="studies" name="studies" type="checkbox" value="studies">
+        <span aria-hidden="true" class="custom-input checkbox"></span>
         Studies
       </label>
       <label for="hobby">
         <input id="hobby" name="studies" type="checkbox" value="hobby">
+        <span aria-hidden="true" class="custom-input checkbox"></span>
         Hobby
       </label>
       <label for="professional">
         <input id="professional" name="studies" type="checkbox" value="professional">
+        <span aria-hidden="true" class="custom-input checkbox"></span>
         Professional
       </label>
     </div>
 
     <label for="suggestions">
       Any suggestions or comments ?
-      <textarea cols="30" id="suggestions" name="suggestions" rows="10"></textarea>
+      <textarea cols="30" id="suggestions" name="suggestions" placeholder="Please, write here"
+                rows="10"></textarea>
     </label>
 
     <button id="submit" type="submit">Submit</button>
   </form>
+
 </main>
+<p class="author">Designed and coded with
+  <svg class="bi bi-heart-fill" fill="currentColor" height="16" style="color: red"
+       viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+          fill="red"
+          fill-rule="evenodd"></path>
+  </svg>
+                  by <a href="https://github.com/TheNewDevl" target="_blank">Karl Code</a>
+</p>
 </body>
 </html>

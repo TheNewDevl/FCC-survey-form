@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+
 /* RESET */
 *, *:before, *:after {
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul, a {
@@ -12,4 +17,169 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul, a {
 
 ol, ul {
     list-style: none;
+}
+
+:root {
+    --bg-input: #3d3b3b;
+    --inputs-spacing: 0.5em
+
+}
+
+body {
+    background: #1c1919;
+}
+
+/* header */
+header {
+    text-align: center;
+    padding: 2em;
+}
+
+#title {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* form */
+
+form {
+    border-radius: 10px;
+    padding: 1em;
+    /*
+    background: #000;
+    */
+    margin: auto;
+    width: 90%;
+    min-width: 300px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+form > label, p {
+    font-weight: 700;
+}
+
+
+input[type="text"], input[type="number"], input[type="email"], select {
+    width: 100%;
+    background: var(--bg-input);
+    padding-left: 10px;
+    height: 30px;
+    border: none;
+    margin-top: var(--inputs-spacing);
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    margin-top: var(--inputs-spacing);
+    margin-left: var(--inputs-spacing);
+}
+
+.form-group input {
+    margin-right: 5px
+}
+
+textarea {
+    margin-top: var(--inputs-spacing);
+    background: var(--bg-input);
+    border: none;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    max-height: 150px;
+    padding: var(--inputs-spacing);
+}
+
+button {
+    height: 40px;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    background: #e0922e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e5bb86;
+}
+
+/* Custom inputs */
+.form-group input {
+    width: 20px;
+    visibility: hidden;
+}
+
+.custom-input {
+    width: 18px;
+    aspect-ratio: 1/1;
+    background: var(--bg-input);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio {
+    border-radius: 50%;
+}
+
+.custom-input.radio::after {
+    content: '';
+    border-radius: 50%;
+    width: 10px;
+    aspect-ratio: 1/1;
+    transition: background 200ms ease-in-out;
+}
+
+.form-group input:hover + .custom-input.radio::after {
+    background: #6e6969;
+}
+
+.form-group input:checked + .custom-input.radio::after {
+    background: #fff;
+}
+
+.form-group input + .custom-input.checkbox::after {
+    content: '';
+    width: 5px;
+    height: 10px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: border 200ms ease-in-out;
+}
+
+.form-group input:hover + .custom-input.checkbox::after {
+    border-color: #6e6969;
+}
+
+.form-group input:checked + .custom-input.checkbox::after {
+    border-color: #fff;
+}
+
+input:invalid {
+    border: 1px solid #984242;
+}
+
+/*author*/
+
+.author {
+    text-align: center;
+    font-size: 11px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.author a {
+    font-size: 12px;
+    text-decoration: underline;
 }
